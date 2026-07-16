@@ -15,7 +15,9 @@ layout: compress
 
     {% seo %}
 
-    {% include favicon.html %}
+    {% if site.favicon %}
+        {% include favicon.html %}
+    {% endif %}
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
 
