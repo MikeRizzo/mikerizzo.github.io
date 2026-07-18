@@ -1,3 +1,5 @@
+@use "variables" as *
+
 // 81.25% makes 1rem = 13px — the whole rem-based site renders 30% larger than the theme default (62.5%, 1rem = 10px)
 body, html
     font-size: 81.25%
@@ -80,13 +82,13 @@ figcaption
 
 blockquote
     padding-left: 15px
-    border-left: 3px solid #eee
+    border-left: 3px solid $epsilon
 
 hr
     border: none
     height: 1px
     margin: 40px auto
-    background: #eee
+    background: $epsilon
     width: 100%
 
 figure.highlight
@@ -98,7 +100,7 @@ code
     font-family: $fontMonospace
     font-size: 12px
     vertical-align: middle
-    background: #eee
+    background: $epsilon
     border-radius: 2px
 
 pre > code,

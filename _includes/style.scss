@@ -1,22 +1,19 @@
+// Each partial @use's the variables module itself, so members stay scoped per
+// file rather than leaking through one global namespace.
+@use "base/normalize";
+@use "base/syntax";
+@use "base/general";
+@use "base/helpers";
 
-@import "base/variables";
-@import "base/normalize";
-@import "base/syntax";
-@import "base/general";
-@import "base/helpers";
+@use "pages/home-blog-projects";
+@use "pages/page";
+@use "pages/post";
+@use "pages/tags";
 
-@import "pages/home-blog-projects";
-@import "pages/page";
-@import "pages/post";
-@import "pages/tags";
-
-@import "components/author";
-@import "components/footer";
-@import "components/header";
-@import "components/nav";
-@import "components/others";
-@import "components/related";
-@import "components/share";
-@import "components/side-by-side";
-@import "components/social-links";
-@import "components/spoiler";
+@use "components/author";
+@use "components/footer";
+@use "components/header";
+@use "components/nav";
+@use "components/others";
+@use "components/share";
+@use "components/social-links";
