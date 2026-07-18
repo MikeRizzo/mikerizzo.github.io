@@ -60,3 +60,40 @@
 
 .lost-container
     text-align: center
+
+    // inline-block centres the art as a unit; text-align left keeps the two
+    // lines' relative offsets so the ears stay above the eyes
+    > .donger
+        display: inline-block
+        width: auto
+        margin: 4rem 0 1rem
+        padding: 0
+        text-align: left
+        // centring the art as a block puts the face right of centre, because the
+        // arms are asymmetric. Nudge left so the eyes' axis (which the ears sit
+        // symmetrically around) lands over "nothings" in the line below.
+        position: relative
+        left: -2.55ch
+        // it is art, not a code block
+        background: none
+        border: 0
+        border-radius: 0
+        overflow: visible
+        font-family: $fontMonospace
+        font-size: 1.8rem
+        line-height: 1.3
+        color: $beta
+
+        // the Myanmar ear glyph has no IBM Plex Mono form and falls back ~3px
+        // wider than the cell, drifting the second ear off its eye; pin each to
+        // one cell so the column maths holds
+        .ear
+            display: inline-block
+            width: 1ch
+            text-align: center
+
+    > .title
+        font-size: 1.8rem
+        font-weight: 300
+        color: $gama
+        margin: 0 0 3rem

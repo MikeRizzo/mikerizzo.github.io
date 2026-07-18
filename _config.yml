@@ -8,7 +8,7 @@ description: A project blog and contact page
 # if it's an external image, update below for true
 # better with square images
 external-image: false
-picture: assets/images/profile.jpg
+picture: assets/images/profile.webp
 
 # your site color theme, true for dark theme, 
 # false to light theme, auto to switch with system.
@@ -25,16 +25,11 @@ url: https://mikerizzo.github.io
 
 permalink: /:title/
 
-# To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+# To enable Google Analytics, supply your GA4 measurement ID below
+# analytics-google: 'G-XXXXXXXXXX'
 
 # Set to true once real icons are in assets/images/favicon/ (see _includes/favicon.html)
 favicon: false
-
-# if you don't want comments in your posts, leave categories empty
-disqus:
-  shortname: github # enter this from your disqus account
-  categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
@@ -49,7 +44,7 @@ authors:
     name: Michael Rizzo
     bio: ML/Ai Hobbyist
     external-image: false
-    picture: assets/images/profile.jpg
+    picture: assets/images/profile.webp
     twitter: "@hellomikerizzo"
 
 # do you want a larger site? change the option below
@@ -111,4 +106,5 @@ exclude:
     "Gemfile.lock",
     "FAQ.md",
     "vendor",
+    "docker-compose.yml",
   ]
