@@ -1,72 +1,57 @@
 @use "../base/variables" as *
 
+// Flex rather than inline-block: 10% + 89% leaves ~6px of slack, and the
+// whitespace between the two tags is ~11px in a monospace font, which wrapped
+// the text underneath the avatar instead of beside it.
 .author
     padding: 3rem 0
-    border-bottom: 1px solid $epsilon
-    border-top: 1px solid $epsilon
+    border-bottom: 1px solid $gama
+    border-top: 1px solid $gama
     max-width: 100%
     margin: 4rem auto 0
-
-    > .toleft > .selfie
-        width: 90%
-        border-radius: 100%
-
-    > .toright > .name,
-    > .toright > .bio
-        width: 60%
-        display: inline-block
-
-    > .toright > .name
-        font-size: 1.5rem
-        font-family: $fontSans
-        font-weight: 500
-        margin: 6px 0 0
-
-        @media #{$mobile}
-            width: 100%
-            display: block
-
-        @media #{$tablet}
-            width: 100%
-            display: block
-
-    > .toright > .bio
-        font-family: $fontSans
-        font-weight: $thin-font
-        color: $gama
-        font-size: 1.3rem
-        text-align: justify
-        line-height: 1.5
-        margin: 0
-
-        @media #{$mobile}
-            width: 100%
-            display: block
-
-        @media #{$tablet}
-            width: 100%
-            display: block
+    text-align: left
+    display: flex
+    align-items: flex-start
+    gap: 3%
 
     > .toleft
-        width: 10%
-        display: inline-block
+        flex: 0 0 10%
 
         @media #{$mobile}
-            width: 20%
+            flex-basis: 20%
 
         @media #{$tablet}
-            width: 20%
+            flex-basis: 20%
+
+        > .selfie
+            width: 100%
+            border-radius: 100%
+            display: block
 
     > .toright
-        width: 89%
-        display: inline-block
-        vertical-align: top
+        flex: 1 1 auto
+        min-width: 0
 
-        @media #{$mobile}
-            width: 78%
+        > .name
+            font-size: 1.5rem
+            font-family: $fontSans
+            font-weight: 500
+            margin: 4px 0 0
+            text-align: left
 
-        @media #{$tablet}
-            width: 78%
+        // plain text, coloured like the nav at the top of the page
+        > .home
+            display: inline-block
+            margin-top: 2px
+            font-size: 1.4rem
+            font-family: $fontSans
+            font-weight: $thin-font
+            color: $delta
+            text-decoration: none
+            transition: color .3s ease-in-out
+
+            &:hover
+                color: $alpha
 
 .no-disqus
     border-bottom: none

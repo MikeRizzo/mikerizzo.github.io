@@ -1,0 +1,37 @@
+@use "../base/variables" as *
+
+// Flex rather than inline-block: two 47.5% inline-blocks plus their margins
+// leave no room for the whitespace between the tags, and in a monospace body
+// font that space is ~11px, which wrapped the second column onto its own row.
+.side-by-side
+    margin: 4rem 0
+
+    @media #{$above}
+        display: flex
+        align-items: flex-start
+        gap: 4%
+        // deliberately wider than the text column
+        width: 130%
+        margin: 6rem 0 6rem -15%
+
+    > .toleft,
+    > .toright
+        @media #{$above}
+            flex: 1 1 0
+            min-width: 0
+
+        @media #{$below}
+            width: 100%
+            margin: 0 0 4rem 0
+
+            img
+                display: block
+                margin: 0 auto
+
+    > .toleft > p,
+    > .toright > p
+        margin: 0
+
+    @media #{$below}
+        > .toright
+            margin-bottom: 0

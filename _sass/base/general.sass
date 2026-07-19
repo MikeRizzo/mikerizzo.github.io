@@ -82,19 +82,23 @@ figcaption
 
 blockquote
     padding-left: 15px
-    border-left: 3px solid $epsilon
+    border-left: 3px solid $gama
 
 hr
     border: none
     height: 1px
     margin: 40px auto
-    background: $epsilon
+    background: $gama
     width: 100%
 
 figure.highlight
     width: 100%
     margin: 0
 
+// every code surface — inline chip and fenced block — uses $epsilon; every
+// other border/background elsewhere moved to $gama. $omega (page background)
+// was here originally, but it's the page's own color, so a code block never
+// read as a distinct box against it (~1.03:1, same bug the chip had)
 code
     padding: 2px 3px
     font-family: $fontMonospace
@@ -109,7 +113,7 @@ tt
     font-family: $fontMonospace
     font-size: 12px
     line-height: 20px
-    background: $omega
+    background: $epsilon
     border-radius: 2px
 
 pre
@@ -121,8 +125,8 @@ pre
     font-size: 1.2rem
     line-height: 2rem
     overflow: auto
-    background: $omega
-    border: 1px solid $epsilon
+    background: $epsilon
+    border: 1px solid $alpha
     border-radius: 2px
 
 .wrapper-normal,

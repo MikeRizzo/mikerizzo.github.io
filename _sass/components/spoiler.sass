@@ -1,0 +1,23 @@
+@use "../base/variables" as *
+
+// Hidden content revealed on hover. The cover has to read as a deliberate
+// redaction bar, so it uses a mid grey rather than a near-background tone.
+.spoiler
+    position: relative
+    cursor: help
+
+    &:before
+        content: ''
+        background-color: $zeta
+        border-radius: 2px
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 50
+        transition: opacity .25s ease-in-out
+
+    &:hover:before
+        opacity: 0
+        pointer-events: none

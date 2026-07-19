@@ -2,6 +2,17 @@
 
 .post
     margin-top: 125px
+    // body copy runs a touch smaller than the site default (1.6rem); headings,
+    // the date and the author block all carry their own explicit sizes
+    font-size: 1.45rem
+    // proportional face for reading; headings and code keep their own families
+    font-family: $fontBody
+
+    // the nav and footer render inside this wrapper on post pages, so they
+    // would inherit the body face — put the site's mono back on them
+    .nav,
+    .footer-main
+        font-family: $fontSans
 
     > .title
         text-align: center
@@ -23,12 +34,14 @@
     > .date
         margin-bottom: 2rem
 
+    // $gama is close in lightness to $alpha, so the pill needs a darker
+    // label to stay readable now that its background isn't near-black
     > .post-tags > .item
         padding: 2px 8px
         border-radius: 3px
         font-size: 1.1rem
-        background: $epsilon
-        color: $alpha
+        background: $gama
+        color: $omega
         letter-spacing: 1px
         margin: 3px 1px
         text-decoration: none

@@ -4,7 +4,7 @@
     margin-top: 125px
 
     > .list
-        border-top: 1px solid $epsilon
+        border-top: 1px solid $gama
         margin-top: 30px
         padding-top: 40px
         position: relative
@@ -14,7 +14,7 @@
             content: " "
             width: 7px
             height: 7px
-            border: $epsilon 1px solid
+            border: $gama 1px solid
             position: absolute
             top: -5px
             left: 50%
@@ -32,9 +32,11 @@
         text-rendering: optimizeLegibility
         padding: 3px 9px
         border-radius: 3px
+        // $gama is close in lightness to $alpha, so the pill needs a darker
+        // label to stay readable now that its background isn't near-black
         font-size: 1.3rem
-        background: $epsilon
-        color: $alpha
+        background: $gama
+        color: $omega
         letter-spacing: 1px
         margin: 0 0.5rem 1rem
         text-decoration: none
