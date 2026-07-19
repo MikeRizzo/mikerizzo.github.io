@@ -2,29 +2,18 @@
 layout: page
 title: Projects
 ---
-{% assign visible_projects = 0 %}
-{% for post in site.posts %}
-    {% if post.projects %}
-        {% if post.hidden != true %}
-            {% assign visible_projects = visible_projects | plus: 1 %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
+{% assign project_posts = site.posts | where_exp: "post", "post.projects and post.hidden != true" %}
 <section class="list">
-    {% if visible_projects == 0 %}
+    {% if project_posts.size == 0 %}
         <p class="text-center">Coming soon!</p>
     {% else %}
-        {% for post in site.posts %}
-            {% if post.projects %}
-                {% if post.hidden != true %}
-                    <div class="item {% if post.star %}star{% endif %}">
-                        <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                            <aside><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                            <h3 class="title">{{ post.title }}</h3>
-                        </a>
-                    </div>
-                {% endif %}
-            {% endif %}
+        {% for post in project_posts %}
+            <div class="item {% if post.star %}star{% endif %}">
+                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
+                    <aside><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                    <h3 class="title">{{ post.title }}</h3>
+                </a>
+            </div>
         {% endfor %}
     {% endif %}
 </section>

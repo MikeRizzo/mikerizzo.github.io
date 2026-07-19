@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://mikerizzo.github.io/sitemap.xml

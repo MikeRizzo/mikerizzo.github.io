@@ -25,11 +25,15 @@ permalink: /:title/
 # analytics-google: 'G-XXXXXXXXXX'
 
 # Set to true once real icons are in assets/images/favicon/ (see _includes/favicon.html)
-favicon: false
+favicon: true
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
-twitter: hellomikerizzo
+# twitter is a map because jekyll-seo-tag reads site.twitter.username;
+# templates use site.twitter.username for the profile link
+twitter:
+  username: hellomikerizzo
+  card: summary
 # instagram: myinstagram
 linkedin: mikerizz0
 github: MikeRizzo
@@ -74,6 +78,12 @@ animation: true
 defaults:
   - scope:
       path: "" # an empty string here means all files in the project
+    values:
+      # jekyll-seo-tag reads page.image only (not site.image), so the social
+      # card image has to be applied as a default rather than a top-level key
+      image: /assets/images/profile.webp
+  - scope:
+      path: ""
       layout: "post"
     values:
       # setting all post to not hidden by default,
@@ -84,6 +94,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
+  - jekyll-sitemap
   - jemoji
 
 compress_html:
